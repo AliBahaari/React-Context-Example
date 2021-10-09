@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import AComponent from './components/AComponent';
+import { createContext } from 'react';
+
+export const DataContext = createContext();
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <DataContext.Provider value={{ name: 'Ali', family: 'Bahaari' }}>
+            <AComponent />
+        </DataContext.Provider>
+    );
 }
 
 export default App;
